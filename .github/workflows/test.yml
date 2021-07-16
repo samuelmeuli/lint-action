@@ -31,6 +31,17 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v2
 
+      # Rust
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          default: true
+          override: true
+          profile: minimal
+          components: clippy
+
       # Go
 
       - name: Set up Go
